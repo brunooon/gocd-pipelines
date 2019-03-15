@@ -3,6 +3,8 @@ environments:
   qa:
     pipelines:
       - hello-world
+    agents:
+      - 1298560a-f659-4d04-9526-f2da9ea4722e
 pipelines:
   hello-world:
     group: default
