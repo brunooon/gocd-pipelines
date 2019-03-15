@@ -23,6 +23,8 @@ pipelines:
           type: success
         jobs:
           default-job:
+            resources:
+              - git
             timeout: 0
             tasks:
             - exec:
