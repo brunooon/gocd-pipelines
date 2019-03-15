@@ -1,0 +1,29 @@
+format_version: 3
+pipelines:
+  hello-world:
+    group: default
+    label_template: ${COUNT}
+    lock_behavior: none
+    materials:
+      git:
+        git: https://github.com/brunooon/hello-world.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    stages:
+    - default-stage:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
+          default-job:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -c
+                - sleep 30
+                command: /bin/bash
+                run_if: passed
