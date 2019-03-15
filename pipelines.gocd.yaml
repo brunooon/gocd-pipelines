@@ -1,4 +1,8 @@
 format_version: 3
+environments:
+  qa:
+    pipelines:
+      - hello-world
 pipelines:
   hello-world:
     group: default
