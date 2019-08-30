@@ -1,11 +1,7 @@
 format_version: 3
-environments:
-  qa:
-    pipelines:
-      - hello-world
 pipelines:
-  hello-world:
-    group: hello-world
+  spring-app:
+    group: spring-apps
     label_template: ${COUNT}
     lock_behavior: none
     materials:
