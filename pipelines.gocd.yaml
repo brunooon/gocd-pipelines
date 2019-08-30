@@ -81,7 +81,7 @@ pipelines:
         keep_artifacts: false
         clean_workspace: false
         approval:
-          type: success
+          type: manual
         jobs:
           publish:
             resources:
