@@ -11,20 +11,21 @@ pipelines:
         auto_update: true
         branch: master
     stages:
-    - default-stage:
+    - build:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
         approval:
           type: success
         jobs:
-          default-job:
+          build:
             resources:
               - git
             timeout: 0
             tasks:
             - exec:
                 arguments:
-                - ./mvnw clean package
-                command: /bin/bash
+                - clean
+                - package
+                command: /mvnw
                 run_if: passed
