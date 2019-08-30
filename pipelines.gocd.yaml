@@ -27,5 +27,5 @@ pipelines:
                 arguments:
                 - clean
                 - package
-                command: ./mvnw
+                command: mvn
                 run_if: passed
