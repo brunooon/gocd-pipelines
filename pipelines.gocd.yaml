@@ -47,3 +47,32 @@ pipelines:
                 - package
                 command: mvn
                 run_if: passed
+    - quality-check:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
+          sonar:
+            resources:
+              - git
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - c
+                - sleep 10
+                command: /bin/bash
+                run_if: passed
+          veracode:
+            resources:
+              - git
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - c
+                - sleep 10
+                command: /bin/bash
+                run_if: passed
