@@ -3,16 +3,14 @@ environments:
   qa:
     pipelines:
       - hello-world
-    agents:
-      - 1298560a-f659-4d04-9526-f2da9ea4722e
 pipelines:
   hello-world:
-    group: default
+    group: hello-world
     label_template: ${COUNT}
     lock_behavior: none
     materials:
       git:
-        git: https://github.com/brunooon/hello-world.git
+        git: https://github.com/brunooon/spring-app.git
         shallow_clone: false
         auto_update: true
         branch: master
@@ -31,7 +29,6 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - -c
-                - sleep 30
+                - ./mvnw clean package
                 command: /bin/bash
                 run_if: passed
