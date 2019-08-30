@@ -27,6 +27,7 @@ pipelines:
                 arguments:
                 - clean
                 - package
+                - -DskipTests
                 command: mvn
                 run_if: passed
           unity-tests:
@@ -37,6 +38,5 @@ pipelines:
             - exec:
                 arguments:
                 - package
-                - -DskipTests
                 command: mvn
                 run_if: passed
