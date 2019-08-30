@@ -76,3 +76,21 @@ pipelines:
                 - sleep 10
                 command: /bin/bash
                 run_if: passed
+    - publish:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
+          publish:
+            resources:
+              - git
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -c
+                - sleep 10
+                command: /bin/bash
+                run_if: passed
