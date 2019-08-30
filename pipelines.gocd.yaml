@@ -29,3 +29,14 @@ pipelines:
                 - package
                 command: mvn
                 run_if: passed
+          unity-tests:
+            resources:
+              - git
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - package
+                - -DskipTests
+                command: mvn
+                run_if: passed
