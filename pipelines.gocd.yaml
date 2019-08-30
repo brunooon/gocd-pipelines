@@ -30,6 +30,13 @@ pipelines:
                 - -DskipTests
                 command: mvn
                 run_if: passed
+    - unity-tests:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
           unity-tests:
             resources:
               - git
