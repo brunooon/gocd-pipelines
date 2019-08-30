@@ -1,0 +1,4 @@
+environments:
+  testing:
+    pipelines:
+      - spring-app
