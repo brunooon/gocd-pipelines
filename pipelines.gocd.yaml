@@ -128,7 +128,7 @@ pipelines:
         branch: master
       spring-app: 
         pipeline: deploy-dev
-        stage: deploy
+        stage: tests
       quality-check:
         pipeline: quality-check
         stage: quality-check
