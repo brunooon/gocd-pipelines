@@ -138,7 +138,7 @@ pipelines:
         branch: master
       spring-app: 
         pipeline: deploy-dev
-        stage: dev
+        stage: deploy
     stages:
     - deploy:
         fetch_materials: true
