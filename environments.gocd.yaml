@@ -4,3 +4,4 @@ environments:
     pipelines:
       - spring-app
       - deploy-dev
+      - deploy-ti
