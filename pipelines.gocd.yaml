@@ -45,6 +45,7 @@ pipelines:
             - exec:
                 arguments:
                 - package
+                - -DskipTests
                 command: mvn
                 run_if: passed
     - publish:
