@@ -5,3 +5,4 @@ environments:
       - spring-app
       - deploy-dev
       - deploy-ti
+      - quality-check
