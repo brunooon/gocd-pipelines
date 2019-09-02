@@ -47,35 +47,6 @@ pipelines:
                 - package
                 command: mvn
                 run_if: passed
-    - quality-check:
-        fetch_materials: true
-        keep_artifacts: false
-        clean_workspace: false
-        approval:
-          type: success
-        jobs:
-          sonar:
-            resources:
-              - git
-            timeout: 0
-            tasks:
-            - exec:
-                arguments:
-                - -c
-                - sleep 10
-                command: /bin/bash
-                run_if: passed
-          veracode:
-            resources:
-              - git
-            timeout: 0
-            tasks:
-            - exec:
-                arguments:
-                - -c
-                - sleep 10
-                command: /bin/bash
-                run_if: passed
     - publish:
         fetch_materials: true
         keep_artifacts: false
@@ -148,6 +119,50 @@ pipelines:
           type: success
         jobs:
           dev:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -c
+                - sleep 10
+                command: /bin/bash
+                run_if: passed
+  quality-check:
+    group: spring-apps
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://github.com/brunooon/hello-world.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+      spring-app: 
+        pipeline: spring-app
+        stage: build
+    stages:
+    - quality-check:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
+          sonar:
+            resources:
+              - git
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -c
+                - sleep 10
+                command: /bin/bash
+                run_if: passed
+          veracode:
+            resources:
+              - git
             timeout: 0
             tasks:
             - exec:
