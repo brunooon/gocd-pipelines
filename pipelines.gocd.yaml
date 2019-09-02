@@ -105,6 +105,9 @@ pipelines:
         shallow_clone: false
         auto_update: true
         branch: master
+      spring-app: 
+        pipeline: spring-app
+        stage: publish
     stages:
     - deploy:
         fetch_materials: true
