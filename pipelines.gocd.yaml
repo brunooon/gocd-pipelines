@@ -97,22 +97,6 @@ pipelines:
                 - sleep 5
                 command: /bin/bash
                 run_if: passed
-    - tests:
-        fetch_materials: true
-        keep_artifacts: false
-        clean_workspace: false
-        approval:
-          type: success
-        test:
-          dev:
-            timeout: 0
-            tasks:
-            - exec:
-                arguments:
-                - -c
-                - sleep 5
-                command: /bin/bash
-                run_if: passed
   deploy-ti:
     group: spring-apps
     label_template: ${COUNT}
@@ -138,22 +122,6 @@ pipelines:
         approval:
           type: success
         jobs:
-          dev:
-            timeout: 0
-            tasks:
-            - exec:
-                arguments:
-                - -c
-                - sleep 5
-                command: /bin/bash
-                run_if: passed
-    - tests:
-        fetch_materials: true
-        keep_artifacts: false
-        clean_workspace: false
-        approval:
-          type: success
-        test:
           dev:
             timeout: 0
             tasks:
