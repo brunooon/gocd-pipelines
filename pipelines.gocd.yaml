@@ -110,6 +110,9 @@ pipelines:
       spring-app: 
         pipeline: deploy-dev
         stage: deploy
+      quality-check:
+        pipeline: quality-check
+        stage: quality-check
     stages:
     - deploy:
         fetch_materials: true
