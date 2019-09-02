@@ -3,3 +3,4 @@ environments:
   testing:
     pipelines:
       - spring-app
+      - deploy-dev
