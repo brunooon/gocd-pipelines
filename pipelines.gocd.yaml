@@ -63,7 +63,7 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - sleep 10
+                - sleep 5
                 command: /bin/bash
                 run_if: passed
   deploy-dev:
@@ -94,7 +94,7 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - sleep 10
+                - sleep 5
                 command: /bin/bash
                 run_if: passed
   deploy-ti:
@@ -128,7 +128,7 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - sleep 10
+                - sleep 5
                 command: /bin/bash
                 run_if: passed
   quality-check:
@@ -161,7 +161,7 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - sleep 10
+                - sleep 5
                 command: /bin/bash
                 run_if: passed
           veracode:
@@ -172,6 +172,6 @@ pipelines:
             - exec:
                 arguments:
                 - -c
-                - sleep 10
+                - sleep 5
                 command: /bin/bash
                 run_if: passed
